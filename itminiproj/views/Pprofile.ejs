@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <%- include('./partials/phead.ejs') %>
+    <% if(datas.length>0){ %>
+    <% datas.forEach(data => {%>
+    <link rel="stylesheet" href="profile.css">
+    </head>
+<body>
+    <%- include('./partials/pnav.ejs') %>
+
+    <div class="main_wrapper">
+            <div class="col-xl-8 order-xl-1">
+                <div class="card bg-secondary shadow">
+                    <div class="card-header bg-white border-0">
+                        <div class="row align-items-center">
+                            <div class="col-8">
+                                <h3 class="mb-0" style="font-size: 35px;">My account</h3>
+                            </div>
+                            <div class="col-4 text-right">
+                                <button type="submit"  form="profile_form" href="#!" class="btn btn-sm btn-primary">Update details</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <form id="profile_form" method="POST" action="/profile_update">
+                            <h6 class="heading-small text-muted mb-4">User information</h6>
+                            <div class="pl-lg-4">
+                                <div class="row">
+                                    <div class="col-lg-6">
+                                        <div class="form-group focused">
+                                            <label class="form-control-label" for="input-first-name">Name</label>
+                                            <input type="text" id="input-first-name" name="name" class="form-control form-control-alternative"
+                                                placeholder="First name" value="<%=data.name %>">
+                                        </div>
+                                        </div>
+                                    <div class="col-lg-6">
+                                        <div class="form-group">
+                                            <label class="form-control-label" for="input-email">Email address</label>
+                                            <input type="email" id="input-email" name="email" class="form-control form-control-alternative"
+                                                placeholder="jesse@example.com" value = "<%=data.email %>">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    
+                                    <div class="col-lg-6">
+                                        <div class="form-group focused">
+                                            <label class="form-control-label" for="input-first-name">Phone Number</label>
+                                            <input type="text" id="input-first-name" name="phno" class="form-control form-control-alternative"
+                                                placeholder="First name" value="<%=data.phno %>">
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <div class="form-group focused">
+                                            <label class="form-control-label" for="input-last-name">Blood group</label>
+                                            <input type="text" id="input-last-name" name="bloodgrp"
+                                                class="form-control form-control-alternative" placeholder="Last name"
+                                                value= "<%=data.bloodgrp %>">
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                            <hr class="my-4">
+                            <!-- Address -->
+                            <h6 class="heading-small text-muted mb-4">Contact information</h6>
+                            <div class="pl-lg-4">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="form-group focused">
+                                            <label class="form-control-label" for="input-address">Address</label>
+                                            <input type="text" name="address" class="form-control form-control-alternative"
+                                                placeholder="A few words about you ..." value="<%=data.address %>">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-4">
+                                        <div class="form-group focused">
+                                            <label class="form-control-label" for="input-city">City</label>
+                                            <input type="text" id="input-city" name="city" class="form-control form-control-alternative"
+                                                placeholder="City" value="<%=data.city %>">
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4">
+                                        <div class="form-group focused">
+                                            <label class="form-control-label" for="input-country">State</label>
+                                            <input type="text" id="input-country" name="state" class="form-control form-control-alternative"
+                                                placeholder="State" value="<%=data.state %>">
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4">
+                                        <div class="form-group">
+                                            <label class="form-control-label" for="input-country">Postal code</label>
+                                            <input type="number" id="input-postal-code" name="postalcode"
+                                                class="form-control form-control-alternative" placeholder="Postal code"
+                                                value = "<%=data.postalcode %>">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <hr class="my-4">
+                            <!-- Description -->
+                            <h6 class="heading-small text-muted mb-4">Other information</h6>
+                            <div class="pl-lg-4">
+                                <div class="form-group focused">
+                                    <label>Allergies</label>
+                                    <textarea rows="4" class="form-control form-control-alternative" name="allergies"
+                                        placeholder="A few words about you ..."><%=data.majors %></textarea>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            </div>
+            </div>
+            </div>
+    </div>
+</form>
+<% })%>
+    <%} else { %>
+        <p>No</p>
+        <% } %>
+    <%- include('./partials/footer.ejs') %>
+</body>
+</html>

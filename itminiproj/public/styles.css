@@ -1,0 +1,256 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;700&display=swap');
+::-webkit-scrollbar {
+  width: 0px;
+}
+* {
+    box-sizing: border-box;
+    
+  }
+  .main_wrapper{
+    min-height: 537.57px;
+  }
+  body {
+    padding: 0px;
+    margin: 0px;
+    font-family: "Roboto", sans-serif;
+    font-family: "Titillium Web", sans-serif;
+  }
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    color: white;
+  }
+  .brand-title {
+    font-size: 2.7rem;
+    margin-left: 1rem;
+    margin-top: 0.01rem;
+    margin-bottom: 0.01rem;
+  }
+  .navbar-links ul {
+    margin: 0;
+    padding: 0;
+    display: flex;
+  }
+  .navbar-links li {
+    list-style: none;
+  }
+  .navbar-links a{
+    text-decoration: none;
+    color: white;
+    font-size: 1.3rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0rem;
+    padding-right: 1rem;
+    padding-left: 1rem;
+    display: block;
+    margin-right: 1rem;
+    margin-left: 1rem;
+    position: relative;
+  }
+  .navbar-links a:before{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #FFF;
+    visibility: hidden;
+    transform: scaleX(0);
+    transition: all 0.3s ease-in-out;
+  }
+  .navbar-links a:hover:before {
+    visibility: visible;
+    transform: scaleX(1);
+  }
+  footer{
+    text-align: center;
+    height: 80px;
+    background-color: #333;
+    color: white;
+    margin: 0px auto 00px;
+    /*position: fixed;*/
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    padding-top: 0px;
+  }
+  footer > h2{
+    font-size: 20px;
+    margin-bottom: 5px;
+  }
+  footer .fa{
+    font-size: 30px;
+    width: 30px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 50%;
+  }
+  footer .fa:hover {
+    opacity: 0.7;
+  }
+  footer .fa-facebook {
+    margin-right: 10px;
+    color: white;
+  }
+  footer .fa-twitter {
+    margin-right: 10px;
+    color: white;
+  }
+  footer .fa-instagram {
+    margin-right: 10px;
+    color: white;
+  }
+
+h2 {
+    margin-bottom: 40px;
+}
+
+h3 {
+    /*text-transform: capitalize;*/
+    margin-bottom: 8px;
+}
+
+
+
+.content {
+    margin-left: 20px;
+}
+
+/* index styles */
+.blogs #searchbar{
+  border: #333 2px solid;
+  width: 28vw;
+  height: 28.33px;
+}
+.blogs button{
+  background-color: #333;
+  color: white;
+  transform: translateY(6.6px);
+  text-align: center;
+  cursor: pointer;
+}
+.blogs a{
+    display: block;
+    margin: 40px 0;
+    padding-left: 30px;
+    border-left: 6px solid #333;
+    text-decoration: none;
+    color: #333;
+}
+.blogs a:hover h3{
+    color: rgb(94, 91, 91);
+}
+/* details styles */
+.details{
+    position: relative;
+  }
+  .details .content{
+    font-size: 24px;
+    padding-left: 0px;
+    /*border-left: #333 4px solid;*/
+    padding-left: 0px;
+    margin-left: 0px;
+  }
+  .details h2{
+    font-size: 28px;
+    border-left: #333 4px solid;
+    padding-left: 20px;
+  }
+  .details .content p{
+      margin-left: 30px;
+      font-size: 30px;
+  }
+  .delete{
+    position: absolute;
+    top: 0;
+    right: 10px;
+    padding: 8px;
+    /*background-color: #333;*/
+    color: white;
+  }
+  .delete:hover{
+    cursor: pointer;
+    box-shadow: 1px 2px 3px rgba(0,0,0,0.5);
+  }
+  .edit{
+    position: absolute;
+    top: 0;
+    right: 60px;
+    padding: 8px;
+    /*background-color: #333;*/
+    color: white;
+  }
+  .edit:hover{
+    cursor: pointer;
+    box-shadow: 1px 2px 3px rgba(0,0,0,0.5);
+  }
+  .editimg{
+    width: 20px;
+  }
+/* create styles */
+.create-blog form {
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.create-blog input,
+.create-blog textarea {
+    display: block;
+    width: 100%;
+    margin: 3px 0;
+    padding: 8px;
+}
+
+.create-blog label {
+    display: block;
+    margin-top: 24px;
+}
+
+textarea {
+    height: 120px;
+}
+
+.create-blog button {
+    margin-top: 20px;
+    background: #333;
+    color: white;
+    padding: 6px;
+    border: 0;
+    font-size: 1.2em;
+    cursor: pointer;
+}
+.create-blog #n{
+  margin-top: 12px;
+}
+.create-blog h2{
+  padding-bottom: 0px;
+  margin-bottom: 0px;
+}
+/*Responsive design*/
+@media (max-width: 768px) {
+  *{
+    font-size: 14px;
+  }
+  .navbar {
+    flex-direction: column;
+  }
+  body{
+    font-size: 20px;
+  }
+  .create-blog .headertag{
+    margin-top: 5px;
+    padding-top: 0px;
+  }
+  .create-blog label{
+    margin-top: 4px;
+  }
+  .create-blog{
+    font-size: 13px;
+  }
+  .create-blog textarea{
+    height: 70px;
+  }
+}
