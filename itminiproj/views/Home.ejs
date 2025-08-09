@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name='viewport' content="width=device-width,initial-scale=1.0">
+        <link rel="stylesheet" href="hstyle.css">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Titillium+Web:wght@600&display=swap"
+            rel="stylesheet">
+            <link rel="stylesheet" href="searchbar.css">
+        <title>ALIVEAN | <%= title %></title>
+        <%- include('./partials/phead.ejs') %>
+        <style>
+            p{
+                font-size: 20px;
+                
+            }
+            .intro{
+                padding-left: 20px;
+                padding-right: 20px;
+            }
+            .inner-form, .third-wrap{
+                 box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            }
+        </style>
+    </head>
+    <body>
+        <%- include('./partials/pnav.ejs') %>
+        
+    <div class="main_wrapper">
+        <div class="bodycontainer">
+            <p>
+                Welcome User!
+            </p>
+            <div class="intro">
+                <p>
+                    You can make an appoinment or take a look at your current appointments below. Details can be updated in the 'Profile'
+                    section. Your previous appointments and all their respective files can be accessed in 'History' section. 
+                </p>
+            </div>
+            <p style="text-align: center;font-size: 40px;">
+                Request an appoinment
+            </p>
+        </div>
+
+        <!--Search bar-->
+        <div class="s01">
+            <form id="appointment_search" method="POST" action="/search_doctors">
+                <div class="inner-form">
+                    <div class="input-field first-wrap">
+                        <input id="search" type="text" name="hospital" placeholder="Which hospital are you looking for?" />
+                    </div>
+                    <div class="input-field second-wrap">
+                        <input id="location" type="text" name="place" placeholder="Location" />
+                    </div>
+                    <div class="input-field third-wrap">
+                        <button class="btn-search" type="submit" value="Submit" form="appointment_search">Search</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <%- include('./partials/footer.ejs') %>
+    </body>
+</html>

@@ -1,0 +1,42 @@
+<html lang="en">
+<%- include("./partials/head.ejs") %>
+
+<body>
+    <%- include("./partials/nav.ejs") %>
+    <div class="main_wrapper">
+        <div class="details content">
+            <h2>Patient Name : <%= blog.title %></h2>
+            <h2>Doctor Name : <%= blog.dname %></h2>
+            <h2>Hospital Name : <%= blog.snippet %></h2>
+            <h2>Link to images : <%= blog.link %></h2>
+            <div class="content">
+                <h2>Medicines Prescribed :</h2>
+                <p class="desc"><%= blog.med %></p>
+                <h2>Description :</h2>
+                <p class="desc"><%= blog.body %></p>
+            </div>
+            <a class = "edit" href="/patients/edit/<%= blog._id %>"><img class = "editimg" src="https://p.kindpng.com/picc/s/154-1541056_edit-edit-icon-svg-hd-png-download.png" alt="edit"></a>
+            <a class="delete" data-doc="<%= blog._id %>"><img
+                    src="https://raw.githubusercontent.com/iamshaunjp/node-crash-course/a3b5ff5cf888c670441dfccf9e1e3f759a39fa16/public/trashcan.svg"
+                    alt="delete"></a>
+        </div>
+    </div>
+    
+
+    <%- include("./partials/footer.ejs") %>
+    <script>
+        const trashcan = document.querySelector('a.delete');
+        trashcan.addEventListener('click', (e) => {
+            const endpoint = `/patients/${trashcan.dataset.doc}`;
+            fetch(endpoint, {
+                method: 'DELETE',
+            })
+                .then(response => response.json())
+                .then(data => window.location.href = data.redirect)
+                .catch(err => console.log(err));
+        });
+
+    </script>
+</body>
+
+</html>

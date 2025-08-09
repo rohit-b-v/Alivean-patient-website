@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <%- include('./partials/head.ejs') %>
+    <link href="profile.css" rel="stylesheet">
+    <style>
+        #search_container{
+            position: relative;
+            font-size: 30px;
+            display: inline-block;
+            width: 90%;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        }
+        #request_button{
+            position: absolute;
+            right: 25px;
+            top: 20px;
+        }
+        .btn{
+            width: 100px;
+            height: 35px;
+            text-align: center;
+            font-size: 15px;
+            padding-right: 5px;
+            padding-left: 5px;
+            border-color: rgb(82, 82, 202);
+            box-shadow: 2px 5px 10px #888888;
+        }
+        a{
+            list-style: none;
+            text-decoration: none;
+            color: azure;
+        }
+    </style>
+</head>
+
+<body>
+    <%- include('./partials/nav.ejs') %>
+<div class="main_wrapper">
+    <p style="text-align: center;font-size: 30px;margin-top: 20px;">
+        You can request an appointment from any of the following doctors!
+    </p>
+            <% for(var i = 0; i < data.length; i++){  %>
+                <div id="search_container">
+                    <div id="text_elements">
+                    <p id="search_doctor">Dr. <%= data[i].dName%><span id="search_specialization">(<%=data[i].expertise %>)</span></p>
+                    <p id="search_hospital"><%= data[i].hName%>, <%= data[i].hBranch%>, <%= data[i].hCity%></p>
+                    </div>
+                    <div id="request_button">
+                    <button type="submit" form="profile_form" href="#!" class="btn btn-sm btn-primary"><a href="mailto:<%= data[i].dName%>@alivean.org?subject=Request for an appointment">Request</a></button>
+                    </div>
+                </div>
+            <% }  %>
+</div>
+    <%- include('./partials/footer.ejs') %>
+</body>
+
+</html>

@@ -1,0 +1,31 @@
+<html lang="en">
+
+<%- include('./partials/head.ejs') %>
+
+<body>
+    <%- include('./partials/nav.ejs') %>
+    <div class="main_wrapper">
+        <div class="create-blog content">
+            <h2 class="headertag">Edit Details :</h2>
+            <form action="/patients/edit/<%= blog._id %>" method="POST">
+                <label id="n" for="title">Patient Name:</label>
+                <input type="text" id="title" name="title" value = '<%= blog.title %>' required>
+                <label for="dname">Doctor Name:</label>
+                <input type="text" id="dname" name="dname" value = '<%= blog.dname %>' required>
+                <label for="link">Link for images and scans : </label>
+                <input type="text" id="link" name="link" value = '<%= blog.link %>' required>
+                <label for="snippet">Hospital Name:</label>
+                <input type="text" id="snippet" name="snippet" value = '<%= blog.snippet %>' required>
+                <label for="med">Medicines prescribed:</label>
+                <textarea id="med" required name="med" value = ''><%= blog.med %></textarea>
+                <label for="body">Description:</label>
+                <textarea id="body" required name="body" value = ''><%= blog.body %></textarea>
+                <button>Submit</button>
+            </form>
+        </div>
+    </div>
+    
+    <%- include('./partials/footer.ejs') %>
+</body>
+
+</html>

@@ -1,0 +1,184 @@
+/*Home page styles*/
+* {
+  box-sizing: border-box;
+}
+body {
+  padding-left: 0px;
+  margin: 0px;
+  font-family: "Roboto", sans-serif;
+  font-family: "Titillium Web", sans-serif;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #333;
+  color: white;
+}
+.brand-title {
+  font-size: 2.7rem;
+  margin-left: 1rem;
+  margin-top: 0.01rem;
+  margin-bottom: 0.01rem;
+}
+.navbar-links ul {
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+.navbar-links li {
+  list-style: none;
+}
+.navbar-links a{
+  text-decoration: none;
+  color: white;
+  font-size: 1.3rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0rem;
+  padding-right: 1rem;
+  padding-left: 1rem;
+  display: block;
+  margin-right: 1rem;
+  margin-left: 1rem;
+  position: relative;
+}
+.navbar-links a:before{
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #FFF;
+  visibility: hidden;
+  transform: scaleX(0);
+  transition: all 0.3s ease-in-out;
+}
+.navbar-links a:hover:before {
+  visibility: visible;
+  transform: scaleX(1);
+}
+.main_wrapper{
+    min-height: 500px;
+    /* 80px header + 40px footer = 120px  */
+}
+footer{
+  text-align: center;
+  height: 75px;
+  background-color: #333;
+  color: white;
+  margin: 60px auto 00px;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+}
+footer > h2{
+  font-size: 25px;
+  margin-bottom: 5px;
+}
+footer .fa{
+    font-size: 25px;
+    width: 25px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 50%;
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+  footer .fa:hover {
+    opacity: 0.7;
+  }
+  footer .fa-facebook {
+    margin-right: 10px;
+    color: white;
+  }
+  footer .fa-twitter {
+    margin-right: 10px;
+    color: white;
+  }
+  footer .fa-instagram {
+    margin-right: 10px;
+    color: white;
+  }
+
+.content{
+  padding-left: 20px;
+}
+
+/*About us styles*/
+.aboutus{
+  padding-left: 20px;
+}
+
+
+/*404 page styling*/
+.totalcontainer{
+  display: flex;
+}
+/*.totalcontainer .image-container{
+  width: 60%;
+}*/
+.totalcontainer .image-container img{
+  width: 100%;
+  transform: translateX(30px);
+  transform: translateY(40px);
+}
+.totalcontainer .text-container h1{
+  font-size: 50px;
+}
+.totalcontainer .text-container h4{
+  font-size: 30px;
+}
+/*Rseponsive styles*/
+/*@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+  }
+}*/
+
+
+/*New editor*/
+.bodycontainer{
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+p{
+  font-size: 22px;
+}
+
+/*Search_result*/
+#search_container{
+  padding: 2px;
+  padding-left: 30px;
+  padding-right: 30px;
+  margin: 2px;
+  margin-left: 50px;
+  margin-right: 50px;
+  border-style: solid;
+  border-color: black;
+}
+
+#search_doctor{
+  margin: 2px;
+  font-size: 30px;
+}
+
+#search_specialization{
+  font-weight: lighter;
+  font-size: 15px;
+  margin-left: 5px;
+}
+
+#search_hospital{
+  margin: 2px;
+  font-size: 20px;
+}
+
+
+/*Scrollbar*/
+/* width */
+::-webkit-scrollbar {
+  width: 0px;
+}
